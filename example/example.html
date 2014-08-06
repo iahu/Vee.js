@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+.validator-msg {
+    position: absolute;
+    padding: 4px 6px;
+    color:#999;
+    white-space: nowrap;
+    font-size: 12px;
+    /*background-color: #fff;*/
+    font-size: 12px;
+    line-height: 1.5;
+    left: 250px;
+    top: 6px;
+}
+.validator-icon {
+    position: absolute;
+    display: inline;
+    width: 16px;
+    height: 16px;
+    left: 6px;
+    background: url("./tips.png") 0 0 no-repeat;
+}
+.proof-thub .icon-false,
+.validator-msg .icon-false {
+    background-position: -2px -23px;
+}
+.proof-thub .icon-false {
+	left: -8px;
+	top: -8px;
+	cursor: pointer;
+}
+.validator-msg .icon-true {
+    background-position: -3px -2px;
+}
+.validator-inner {
+    position: relative;
+    margin-left: 20px;
+}
+.form-box .input-row {
+	position: relative;
+}
+.form-box .input-text {
+	padding: 6px 10px;
+	border: 1px solid #ccc;
+}
+.form-box .input-l {
+	position: absolute;
+	color: #999;
+	font-size: 12px;
+	font-weight: normal;
+	width: 5em;
+	text-align: right;
+	line-height: 34px;
+}
+.form-box .sigle-row .input-l {
+	margin-top: 8px;
+}
+.input-c {
+	position: relative;
+	margin-left: 70px;
+}
+.gender-c,.xy-c {
+	height: 34px;
+	vertical-align: middle;
+	line-height: 34px;
+}
+.gender-c .validator-msg{
+	margin-left: 107px;
+	margin-top: -5px;
+}
+#description, .ceditor {
+	width: 149px;
+	height: 60px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	resize: none;
+	overflow: auto;
+	line-height: 1.5;
+	color:#333;
+	text-align: left;
+	font-size: 12px;
+	background-color: #fff;
+}
+.btn-orange {
+	margin-left: 68px;
+	margin-top: 10px;
+}
+.description-c .validator-msg {
+	margin-left: 2px;
+}
+.xy-c .validator-msg {
+	margin-left: 150px;
+}
+	</style>
+</head>
+<body>
+	<form action="/save.do" action="POST" id="complaints-form" class="form-box">
+		<div class="input-row">
+			<div class="input-g">
+				<label for="contact" class="input-l">联系人</label>
+				<input type="text" name="contact" id="contact" value="张三" class="input-c input-text">
+			</div>
+		</div>
+
+		<div class="input-row">
+			<div class="input-g">
+				<label for="tel" class="input-l">性别</label>
+				<div class="input-c gender-c">
+					<input type="radio" name="gender" value="1" class="input-r">男
+					<input type="radio" name="gender" value="2" class="input-r">女
+				</div>
+			</div>
+		</div>
+
+		<div class="input-row">
+			<div class="input-g">
+				<label for="tel" class="input-l">联系电话</label>
+				<input type="text" name="tel" id="tel" value="13800138000" class="input-c input-text">
+			</div>
+		</div>
+
+		<div class="input-row">
+			<div class="input-g">
+				<label for="description" class="input-l">问题描述</label>
+				<div class="input-c description-c"><textarea name="description" id="description" class="input-ta" autofocus="true"></textarea></div>
+			</div>
+		</div>
+		<div class="input-row">
+			<div class="input-g">
+				<div class="input-c xy-c"><input type="checkbox" name="xy" id="xy">同意</div>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-orange">提 交</button>	
+	</form>
+
+	<script src="jquery.js"></script>
+	<script src="../src/vee.js"></script>
+	<script src="example.js"></script>
+</body>
+</html>
